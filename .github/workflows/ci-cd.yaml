@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-
-
   pull_request:
     branches:
       - main
@@ -14,8 +12,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-
-
     steps:
+        # STEP1: Checkout Code
       - name: Checkout code
         uses: actions/checkout@v3
+        
+        #STEP2: Setup Node.js
+      - name: Set up NODEJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+        
+        #STEP3: Install NodeJS dependencies with NPM
+      - name: Install NodeJS dependencies with npm
+        run: npm install
+
+
+        
