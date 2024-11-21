@@ -43,7 +43,7 @@ jobs:
 
       # Scan Docker Image with Trivy
       - name: Trivy Scan
-        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest imageactions-app:${{ github.sha }}
+        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image actions-app:${{ github.sha }}
 
       # Configure AWS credentials
       - name: Configure AWS Credentials
